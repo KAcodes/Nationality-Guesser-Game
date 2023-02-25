@@ -39,27 +39,27 @@ function App() {
 
 
   return (
-    <div style={{
-      margin: 'auto',
-      width: '50%',
-      textAlign: 'center'
-    }}>
+    <div>
+      <div className="box">
+        <div className="form-content">
+        <h1>Nationality Guesser</h1>
+        <p>Type and submit any name into the form to see what country this name is most likely from!</p>
+        <form className="form" onSubmit={fetchData}
+        >
+          <input
+            ref={inputRef}
+            type='text'
+            className="input"
+            placeholder="Enter name here"
+          />
+          <button type="submit" className="submit-btn">Submit</button>
+        </form>
 
-      <h1>Nationality Guesser</h1>
-      <p>Type and submit any name into the form to see what country this name is most likely from!</p>
-      <form onSubmit={fetchData}
-      >
-        <input
-          ref={inputRef}
-          type='text'
-        />
-        <button type="submit">Submit</button>
-      </form>
-
-      <p>Name = {searchedName}</p>
-      <p>The Country Code = {thisCountry}</p>
-      <p>Probability = {(myProbability * 100).toFixed(1)}%</p>
-
+        <p>Name = {searchedName}</p>
+        <p>The Country Code = {thisCountry}</p>
+        <p>Probability = {(myProbability * 100).toFixed(1)}%</p>
+        </div>
+      </div>
     </div>
   );
 }
