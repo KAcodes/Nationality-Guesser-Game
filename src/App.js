@@ -31,6 +31,13 @@ function App() {
 
 };
 
+const displayCountryInfo = async () => {
+
+  const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
+  const result = await response.json();
+  const flagPic = result[0].flags.svg;
+  
+}
 
   //when page is rendered useEffect focuses input box 
   useEffect(() => {
